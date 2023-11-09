@@ -1,0 +1,39 @@
+
+# Compiled files
+*.o
+*.out
+*.class
+*.bin
+
+# Executables
+*.exe
+*.com
+
+# Compiled Python files
+*.pyc
+
+# Temporary files
+*.tmp
+*.log
+
+# Editor-specific files
+.vscode/
+.vscode
+.idea/
+
+# Dependency directories
+__pycache__/
+node_modules/
+
+# Environment configuration file
+.editorconfig
+*.cph
+*.cph/
+.cph/
+*.prob
+.env
+
+# tempCodeRunner
+tempCodeRunner.cpp
+temp.cpp
+temp.c
