@@ -2,17 +2,23 @@
 #define __STUDENT_H_
 
 #include <unordered_set>
+#include <algorithm>
 
 template <typename T>
 void CP::vector<T>::uniq() {
-  //do someting here
+  std::unordered_set<T> s;
+  CP::vector<T> v;
   T* res = new T[mSize];
-  unordered_set<string> s;
   int cnt = 0;
-  for (auto t : mData) {
-    if (s.find(to_string(t)) != s.end()) res[cnt++] = to_string(cnt++);
-    s.insert(to_string(t));
+  for (int i = 0; i < mSize; i++) {
+    if (s.find(mData[i]) != s.end()) {
+      s.insert(mData[i]);
+      v.push_back(mData[i]);
+    }
   }
+  // delete mData;
+  mData = v;
+  mSize = cnt;
 }
 
 #endif

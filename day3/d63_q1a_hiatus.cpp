@@ -14,7 +14,7 @@ int main() {
         if (*it == std::pair(a, b)) std::cout << "0 0 ";
         else if (it == v.begin()) std::cout << "-1 -1 ";
         else {
-            auto [x, y] = *it;
+            auto [x, y] = *(--it);
             std::cout << x << ' ' << y << ' ';
         }
     }
