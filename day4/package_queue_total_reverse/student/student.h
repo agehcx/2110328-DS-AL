@@ -4,7 +4,13 @@
 
 template <typename T>
 void CP::queue<T>::reverse() {
-  // tbd
+  if (aux == 0) {
+    mFront = (mFront + mSize - 1) % mCap;
+    aux = 1;
+  } else {
+    mFront = (mFront - mSize + 1 + mCap) % mCap;
+    aux = 0;
+  }
 }
 
 template <typename T>
@@ -14,20 +20,19 @@ const T& CP::queue<T>::front() const {
 
 template <typename T>
 const T& CP::queue<T>::back() const {
-  return mData[(mFront + mSize - 1) % mCap];
+  return mData[((aux == 0) ? (mFront + mSize - 1) : (mFront - mSize + 1 + mCap)) % mCap];
 }
 
 template <typename T>
 void CP::queue<T>::push(const T& element) {
   ensureCapacity(mSize + 1);
-  mData[(mFront + mSize) % mCap] = element;
+  mData[((aux == 0) ? (mFront + mSize) : (mFront - mSize + mCap)) % mCap] = element;
   mSize++;
 }
 
 template <typename T>
 void CP::queue<T>::pop() {
-  // You MAY need to edit this function
-  mFront = (mFront + 1) % mCap;
+  mFront = ((aux == 0) ? (mFront + 1) : (mFront - 1 + mCap)) % mCap;
   mSize--;
 }
 

@@ -7,17 +7,13 @@
 template <typename T>
 void CP::vector<T>::uniq() {
   std::unordered_set<T> s;
-  CP::vector<T> v;
-  T* res = new T[mSize];
   int cnt = 0;
   for (int i = 0; i < mSize; i++) {
-    if (s.find(mData[i]) != s.end()) {
+    if (s.find(mData[i]) == s.end()) {
       s.insert(mData[i]);
-      v.push_back(mData[i]);
+      mData[cnt++] = mData[i];
     }
   }
-  // delete mData;
-  mData = v;
   mSize = cnt;
 }
 
