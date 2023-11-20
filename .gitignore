@@ -1,3 +1,6 @@
+# Exams
+/midterm
+/final
 
 # Compiled files
 *.o
@@ -36,4 +39,4 @@ node_modules/
 # tempCodeRunner
 tempCodeRunner.cpp
 temp.cpp
-temp.c
+temp.
