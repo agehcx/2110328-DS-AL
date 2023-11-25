@@ -2,6 +2,9 @@
 /midterm
 /final
 
+# Zip files
+*.zip
+
 # Compiled files
 *.o
 *.out
