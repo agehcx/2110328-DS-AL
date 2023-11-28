@@ -6,7 +6,6 @@
 //#pragma once
 
 namespace CP { 
-
 template <typename T>
 class vector
 {
