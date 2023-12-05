@@ -1,22 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+typedef long long ll;
+
+ll binpow(ll a, ll b, ll c) {
+    ll res = 1;
+
+    while (b > 0) {
+        if (b & 1) {
+            res = (res * a) % c;
+        }
+        a = (a * a) % c;
+        b = b / 2;
+    }
+
+    return res;
+}
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int N = 9;
-    int cnt = 0;
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            if (i == j) {
-                for (int k = 0; k < N; k++) {
-                    cnt++;
-                    // cout << i << ' ' << j << ' ' << k << '\n';
-                }
-            } else {
-                cnt++;
-            }
-        }
-    }
-    cout << cnt;
+    int a = 2, b = 87, c = 100;
+
+    cout << binpow(a, b, c);
 }

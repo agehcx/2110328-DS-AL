@@ -18,11 +18,8 @@ void du(int u, int v) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
     int n; cin >> n;
-    
     vector<pair<int, pair<int, int>>> g;
-
     for (int i = 0; i < n - 1; i++) {
         parent[i] = -1;
         for (int j = i + 1; j < n; j++) {
@@ -30,19 +27,17 @@ int main() {
             g.push_back({x, {i, j}});
         }
     }
- 
     sort(g.begin(), g.end(), less<pair<int, pair<int, int>>>());
-
     long long res = 0;
-
-    for (auto it : g) {
-        int u = fp(it.second.first);
-        int v = fp(it.second.second);
+    for (auto [w, it] : g) {
+        int u = fp(it.first);
+        int v = fp(it.second);
         if (u != v) {
-            res += it.first;
+            res += w;
             du(u, v);
         }
     }
-
     cout << res;
 }
+
+

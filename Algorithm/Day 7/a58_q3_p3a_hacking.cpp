@@ -38,3 +38,4 @@ int main() {
 
     cout << *max_element(dist.begin(), dist.end());
 }
+
